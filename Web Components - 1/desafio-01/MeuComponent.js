@@ -6,7 +6,7 @@ class MeuComponent extends HTMLElement {
 
     //base do component
     const componentRoot = document.createElement("h1");
-    componentRoot.textContent = "Felipe";
+    componentRoot.textContent = "Carla";
 
     //estilo do component
     const style = document.createElement("style");
