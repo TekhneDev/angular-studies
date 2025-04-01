@@ -1,4 +1,4 @@
-class Cardnews extends HTMLElement {
+class CardNews extends HTMLElement {
   constructor() {
     super();
 
@@ -17,12 +17,13 @@ class Cardnews extends HTMLElement {
     const autor = document.createElement("span");
     autor.textContent = "By " + (this.getAttribute("autor") || "Anonymous");
 
+    // <a> já tem uma prop definida como href
     const linkTitle = document.createElement("a");
     linkTitle.textContent = this.getAttribute("title");
     linkTitle.href = this.getAttribute("link-url");
 
     const newsContent = document.createElement("p");
-    newsContent.textContent = this.getAttribute("contet");
+    newsContent.textContent = this.getAttribute("content");
 
     cardLeft.appendChild(autor);
     cardLeft.appendChild(linkTitle);
@@ -31,6 +32,7 @@ class Cardnews extends HTMLElement {
     const cardRight = document.createElement("div");
     cardRight.setAttribute("class", "card__right");
 
+    // <img> já tem uma prop definida como src
     const newsImage = document.createElement("img");
     newsImage.src = this.getAttribute("photo") || "assets/foto-default.jpg";
     newsImage.alt = "Foto da Noticia";
@@ -83,4 +85,4 @@ class Cardnews extends HTMLElement {
   }
 }
 
-customElements.define("card-news", Cardnews);
+customElements.define("card-news", CardNews);
